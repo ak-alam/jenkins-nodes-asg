@@ -1,0 +1,12 @@
+[Unit]
+Description=delete node
+Requires=network-online.target
+After=network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStop=/usr/bin/bash /tmp/delete-node.sh
+
+[Install]
+WantedBy=network.target
